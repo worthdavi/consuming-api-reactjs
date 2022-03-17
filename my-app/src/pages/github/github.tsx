@@ -18,17 +18,17 @@ function GitHub({user} : any){
             {isFetching && <p style={{textAlign: 'center'}}>Carregando...</p>}
             <Header user={user} favorites={favorites}/>
             <ul>
-                {repositories?.map(rep => {
-                    return (   
+                {repositories?.map(repository => {
+                    return (
                        <CriaItem 
                             user={user}
-                            id={rep.id} 
-                            name={rep.name} 
-                            favorite={rep.favorite}
-                            description={rep.description}
+                            name={repository.name} 
+                            favorite={repository.favorite}
+                            description={repository.description}
                             handleCheckbox={
-                                () => setData(handleCheckbox(repositories, rep.id) || null)
+                                () => setData(handleCheckbox(repositories, repository.id) || null)
                             }
+                            key={(repository.id).toString()}
                        />
                     )
                 })}         

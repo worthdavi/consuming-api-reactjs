@@ -18,7 +18,6 @@ export function Header({user, favorites} : HeaderProps){
 }
 
 type ItemProps = {
-    id: number
     name: string
     description: string
     favorite: boolean
@@ -26,10 +25,10 @@ type ItemProps = {
     user: string
 }
 
-export function CriaItem({id, name, favorite, description, handleCheckbox, user} : ItemProps){
+export function CriaItem({name, favorite, description, handleCheckbox, user} : ItemProps){
     return (
         <>
-            <Item key={id}>
+            <Item>
                 <a target="_blank" href={`https://github.com/${user}/${name}`}>{name}</a><span>
                 {favorite ? 'Favoritado' : 'Favoritar'} <input type="checkbox" onChange={handleCheckbox} checked={favorite}/></span>
                 <p>{description}</p>

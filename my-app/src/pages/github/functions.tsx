@@ -6,20 +6,18 @@ export type Repository = {
 }
 
 export function handleCheckbox(repositories : Repository[] | null, repoId : number){
-    const answer = repositories?.map(repo => {
-        if(repo.id === repoId){
-            repo.favorite = !repo.favorite
-        }
-        return repo
+    const answer = repositories?.map(repository => {
+        if(repository.id === repoId)
+            repository.favorite = !repository.favorite
+        return repository
     })
     return answer
 }
 
 export function getFavorites(repositories : Repository[] | null){
-    const answer = repositories?.filter(repo => {
-        if(repo.favorite){
-            return repo
-        }
+    const answer = repositories?.filter(repository => {
+        if(repository.favorite)
+            return repository
     })
     return answer
 }

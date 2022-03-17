@@ -38,5 +38,4 @@ export const Item = styled.li`
     input[type=checkbox]{
         transform: scale(1.5);
     }
-
 `

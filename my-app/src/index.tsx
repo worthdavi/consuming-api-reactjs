@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GitHub from './pages/github/github';
+import App from './app'
 
 ReactDOM.render(
   <React.StrictMode>
-    <GitHub user="worthdavi"/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
